@@ -11,10 +11,8 @@ public class GreetingController {
         this.greetingService = greetingService;
     }
     @GetMapping
-    public Map<String, String> getGreeting(@RequestParam(required = false) String firstName,
-                                           @RequestParam(required = false) String lastName) {
-        String message = greetingService.getGreetingMessage(firstName, lastName);
-        return Map.of("message", message);
+    public Map<String, String> getGreeting() {
+        return Map.of("message", greetingService.getGreetingMessage());
     }
 //    @GetMapping
 //    public Map<String, String> getGreeting() {
