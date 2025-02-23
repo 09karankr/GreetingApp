@@ -3,6 +3,7 @@ package com.spring.greetingapp;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.*;
 import java.util.Map;
 
 @Service
@@ -18,6 +19,9 @@ public class GreetingService {
     }
     public Greeting getGreetingById(Long id) {
         return greetings.get(id);
+    }
+    public List<Greeting> getAllGreetings() {
+        return new ArrayList<>(greetings.values());
     }
     private String getGreetingMessage(String firstName, String lastName) {
         if (firstName != null && lastName != null) {

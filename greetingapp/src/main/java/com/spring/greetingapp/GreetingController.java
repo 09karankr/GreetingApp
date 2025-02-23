@@ -1,6 +1,8 @@
 package com.spring.greetingapp;
 
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -20,5 +22,9 @@ public class GreetingController {
     @GetMapping("/{id}")
     public Greeting getGreeting(@PathVariable Long id) {
         return greetingService.getGreetingById(id);
+    }
+    @GetMapping
+    public List<Greeting> getAllGreetings() {
+        return greetingService.getAllGreetings();
     }
 }
